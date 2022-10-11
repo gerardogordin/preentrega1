@@ -26,7 +26,6 @@ ingreso();
 let arr= [];
 let producto =[];
 let precio= []; 
-let cuotas;
 
  const productoS = [
 
@@ -37,10 +36,9 @@ let cuotas;
 { nombre: 'Medias', precio: 950},
 
  ];
+console.log(productoS[2]);   
 
-
-
- 
+let cuotas; 
 let carrito;
 
 function eleccionProducto ()   {
@@ -49,48 +47,49 @@ let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al 
         case '1': alert (`El valor del ${productoS[0].nombre} es de $ ${productoS[0].precio}`); 
         confirm('Desea comprar algo mas? Si es asi, indique que producto. Si no, haga click en CANCELAR')
         if (true) {
-            let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
+             carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
         }   else {} 
         break;
         case '2': alert (`El valor del ${productoS[1].nombre} es de $ ${productoS[1].precio}`);
         confirm('Desea comprar algo mas? Si es asi, indique que producto. Si no, haga click en CANCELAR')
         if (true) {
-            let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
+             carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
         }   else {} 
         break;
         case '3': alert (`El valor de la ${productoS[2].nombre} es de $ ${productoS[2].precio}`);
         confirm('Desea comprar algo mas? Si es asi, indique que producto. Si no, haga click en CANCELAR')
         if (true) {
-            let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
+             carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
         }   else {} 
         break;
         case '4': alert (`El valor del ${productoS[3].nombre} es de $ ${productoS[3].precio}`);
         confirm('Desea comprar algo mas? Si es asi, indique que producto. Si no, haga click en CANCELAR')
         if (true) {
-            let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
+             carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
         }   else {} 
         break;
         case '5': alert (`El valor de las ${productoS[4].nombre} es de $ ${productoS[4].precio}`)
         confirm('Desea comprar algo mas? Si es asi, indique que producto. Si no, haga click en CANCELAR')
         if (true) {
-            let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
+             carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
         }   else {} 
         break;
         default: while (carrito > 5) {
         alert ('Debes ingresar el número correspondiente a la prenda que elijas. Recuerda que solo puedes ingresar una prenda a la vez')
-        let carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
+         carrito = prompt ('Qué desea comprar? Ingrese el numero que corresponda al producto.  1-Buzo              2- Pantalon             3- Camiseta              4- Conjunto             5- Medias')
         break;
     }
 }
-return carrito
+return carrito;
+
 }
 
 
 
-function pagoProductos () {
-    let cuotas = prompt('Ingrese la cantidad de cuotas en las que desea abonar. Puede ser 1,3,6 o 12 cuotas sin intereses')
+function pagoProductos (a, b) {
+     cuotas = parseFloat(prompt('Ingrese la cantidad de cuotas en las que desea abonar. Puede ser 1,3,6 o 12 cuotas sin intereses'));
     switch (cuotas) {
-        case '1': alert('El monto por total a abonar es de '+ carrito )
+        case '1': alert('El monto total a abonar es de '+ carrito )
         break;
         case '3': alert('El monto por cuota es de '+(carrito/cuotas))
         break;
@@ -98,15 +97,14 @@ function pagoProductos () {
         break;
         case '12': alert('El monto por cuota es de '+(carrito/cuotas))
         break;
-    
+        
         default: alert('Por favor ingrese alguno de los valores requeridos') 
-        let cuotas = prompt('Ingrese la cantidad de cuotas en las que desea abonar. Puede ser 1,3,6 o 12 cuotas sin intereses')
-
-            break;
+        cuotas =parseFloat ( prompt('Ingrese la cantidad de cuotas en las que desea abonar. Puede ser 1,3,6 o 12 cuotas sin intereses'));
+        break;
     }
-    return cuotas
+    return cuotas;
 }
 eleccionProducto();
-pagoProductos()
+pagoProductos(carrito, cuotas);
 
 
